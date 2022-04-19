@@ -29,8 +29,25 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnDone = findViewById(R.id.btn_done);
 
+        btnDone.setOnClickListener(btnListener);
         checkStart.setOnCheckedChangeListener(checkListener);
     }
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        public void onClick(View view) {
+            switch (rg.getCheckedRadioButtonId()) {
+                case R.id.rb_dog:
+                    imgv.setImageResource(R.drawable.dog);
+                    break;
+                case R.id.rb_cat:
+                    imgv.setImageResource(R.drawable.cat);
+                    break;
+                case R.id.rb_rabbit:
+                    imgv.setImageResource(R.drawable.bunny);
+                    break;
+            }
+        }
+    };
+
     CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
