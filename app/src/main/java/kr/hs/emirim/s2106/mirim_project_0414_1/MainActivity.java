@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 linearSub.setVisibility(View.VISIBLE);
             }
             else
-                linearSub.setVisibility(View.INVISIBLE)
+                linearSub.setVisibility(View.INVISIBLE);
         }
     };
 }
