@@ -33,12 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnFinish = findViewById(R.id.btn_finish);
         btnFinish.setOnClickListener(btnListener);
+
+        Button btnFirst = findViewById(R.id.btn_first);
+        btnFirst.setOnClickListener(btnListener);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            finish();
+            switch(view.getId()) {
+                case R.id.btn_finish:
+                    finish();
+                    break;
+                case R.id.btn_first:
+                    linearSub.setVisibility(View.INVISIBLE);
+                    checkStart.setChecked(false);
+                    break;
+            }
         }
     };
 
